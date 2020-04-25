@@ -81,6 +81,7 @@ static int output_pstoedit_writer(FILE * file, gchar * name, int llx, int lly, i
    */
   p2e_writer = at_output_get_handler_by_suffix("p2e");
   at_splines_write(p2e_writer, tmpfile_p2e, tmpfile_name_p2e, opts, &shape, msg_func, msg_data);
+  fflush(tmpfile_p2e);
 
 
   tmpfile_pstoedit = make_temporary_file(tmpfile_name_pstoedit, "r");
