@@ -41,7 +41,9 @@ Uninstall
 sudo make uninstall
 ```
 
-
+== End of TL;DR ==
+======================
+Below is the original README.
 
 AutoTrace
 =========
