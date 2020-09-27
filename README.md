@@ -1,4 +1,46 @@
-[![Build Status](https://travis-ci.org/autotrace/autotrace.svg?branch=future)](https://travis-ci.org/autotrace/autotrace)
+TL;DR
+=====
+
+This is a fork of [hanmertens/autotrace](https://github.com/hanmertens/autotrace) and I have merged bug fixes into `master` branch.
+
+
+Quick Installation Guide for Ubuntu 18.04 and later
+---------------------------------------------------
+
+Execute the commands below line-by-line.
+```
+sudo apt install intltool imagemagick libmagickcore-dev pstoedit libpstoedit-dev autopoint
+
+git clone https://github.com/yy502/autotrace
+cd autotrace
+
+./autogen.sh
+
+LD_LIBRARY_PATH=/usr/local/lib ./configure --prefix=/usr
+
+make
+sudo make install
+```
+
+Quick Conversion Command
+------------------------
+This line converts a B&W (black drawing on white background) `input.png` image to vectorised single centerline `out.svg` image. Read the help docs of `autotrace` if you need to tweak the parameters.
+```
+autotrace -centerline -color-count 2 -background-color FFFFFF -output-file out.svg input.png
+```
+
+For LaserPecker Users
+---------------------
+Open the svg output with Inkscape (make sure you have install [this extension for LP](https://github.com/yy502/inkscape-laserpecker)), select all the lines you wish to conver to Gcode, but **resize it first** using the width/height boxes on the top of the tool bar. Lock aspect ratio and set it to no bigger than 100x100 **px** `<- ignore this unit, it will be considered as mm during Gcode generation`.
+
+See [https://github.com/yy502/inkscape-laserpecker](https://github.com/yy502/inkscape-laserpecker) for detailed tutorial on how to generate Gcode for LaserPecker. 
+
+Uninstall
+---------
+```
+sudo make uninstall
+```
+
 
 
 AutoTrace
